@@ -1,11 +1,10 @@
 import api from "@/lib/api";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  _request: NextRequest,
-  { params }: { params: { eventId: string } }
-) {
-  const { eventId } = params;
+export async function GET(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+  const eventId = pathname.split("/").pop();
+
   console.log("eventId", eventId);
 
   try {
