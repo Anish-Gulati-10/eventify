@@ -2,10 +2,10 @@ import api from "@/lib/api";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  request: NextRequest
 ) {
-  const { id } = params;
+  const pathname = request.nextUrl.pathname; // e.g. /api/events/123
+  const id = pathname.split('/').pop();
   const body = await request.json();
   const token: string | null =
     request.headers.get("Authorization")?.split(" ")[1] || null;
@@ -50,9 +50,9 @@ export async function GET(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
 ) {
-  const { id } = params;
+  const { pathname } = request.nextUrl; // e.g. /api/events/123
+  const id = pathname.split("/").pop();
   const token: string | null =
     request.headers.get("Authorization")?.split(" ")[1] || null;
   try {
