@@ -44,6 +44,7 @@ export default function EventsPage() {
       }
     };
     fetchEvents();
+    console.log(process.env.NEXT_PUBLIC_BACKEND_URL)
   }, []);
 
   useEffect(() => {
