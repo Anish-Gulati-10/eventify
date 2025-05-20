@@ -30,7 +30,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <Link href="/" className="text-xl font-bold text-primary">
-            EventManager
+            Eventify
           </Link>
 
           {/* Desktop menu */}
