@@ -8,8 +8,8 @@ export async function POST(req: NextRequest) {
     const res = await api.post(`/participants/register`, body);
 
     return NextResponse.json(res.data, { status: res.status });
-  } catch (error: any) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (error: any) {
     const status = error?.response?.status || 500;
     const data = error?.response?.data;
 

@@ -47,8 +47,8 @@ export function EditEventForm({ event, onSuccess }: { event: Event; onSuccess?: 
       });
       if (onSuccess) onSuccess(res.data);
       setErrorMsg(null);
-    } catch (err: any) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err: any) {
       const message = err.response?.data?.error || "Something went wrong";
       setErrorMsg(message);
     }

@@ -42,8 +42,8 @@ export function LoginForm({
         localStorage.setItem("username", res.data.username);
         router.push("/events");
       }
-    } catch (error: any) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (error: any) {      
       const message = error.response?.data?.error || "Something went wrong";
       setErrorMsg(message);
     }

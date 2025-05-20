@@ -57,8 +57,8 @@ export default function EventDetailsPage() {
       reset();
       setShowForm(false);
       setErrorMsg(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const message = err.response?.data?.error || "Something went wrong";
       setErrorMsg(message);
     }
