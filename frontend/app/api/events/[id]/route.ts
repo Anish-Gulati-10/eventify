@@ -28,10 +28,10 @@ export async function PUT(
 }
 
 export async function GET(
-  _request: NextRequest,
-  { params }: { params: { id: string } }
+  request: NextRequest
 ) {
-  const { id } = params;
+  const { pathname } = request.nextUrl; // e.g. /api/events/123
+  const id = pathname.split("/").pop(); // get last segment (id)
   try {
     const res = await api.get(`/events/${id}`);
 
