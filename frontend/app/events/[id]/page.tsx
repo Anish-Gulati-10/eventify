@@ -35,7 +35,7 @@ export default function EventDetailsPage() {
   const [event, setEvent] = useState<Event | null>(null);
   const [participants, setParticipants] = useState<Participant[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showForm, setShowForm] = useState<Boolean>(false);
+  const [showForm, setShowForm] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState(null);
 
   const {
@@ -58,6 +58,7 @@ export default function EventDetailsPage() {
       setShowForm(false);
       setErrorMsg(null);
     } catch (err: any) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const message = err.response?.data?.error || "Something went wrong";
       setErrorMsg(message);
     }

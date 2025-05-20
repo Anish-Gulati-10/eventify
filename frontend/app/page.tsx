@@ -73,7 +73,7 @@ export default function Home() {
             Let Eventify Simplify Your Workflow
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Whether you're hosting a meetup or a major conference, Eventify has the tools to streamline your event from start to finish.
+            Whether you&apos;re hosting a meetup or a major conference, Eventify has the tools to streamline your event from start to finish.
           </p>
           <Button size="lg">
             <Link href="/events/new">Start Planning</Link>

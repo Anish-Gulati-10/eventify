@@ -19,6 +19,7 @@ export async function PUT(
 
     return NextResponse.json(res.data, { status: res.status });
   } catch (error: any) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const status = error.response?.status || 500;
     const message = error.response?.data?.message || "Server error";
 
@@ -36,6 +37,7 @@ export async function GET(
 
     return NextResponse.json(res.data, { status: res.status });
   } catch (error: any) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const status = error.response?.status || 500;
     const message =
       error.response?.data?.error ||
@@ -62,6 +64,7 @@ export async function DELETE(
 
     return NextResponse.json(res.data, { status: res.status });
   } catch (error: any) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const status = error.response?.status || 500;
     const message =
       error.response?.data?.error ||

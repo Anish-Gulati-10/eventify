@@ -60,6 +60,7 @@ export default function NewEventPage() {
       // Redirect to the newly created event's page
       router.push(`/events/${res.data.id}`);
     } catch (err: any) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const message = err.response?.data?.error || "Something went wrong";
       setErrorMsg(message);
     }
