@@ -11,7 +11,7 @@ export function isTokenExpired(token: string): boolean {
     const decoded = JSON.parse(atob(payload));
     const now = Math.floor(Date.now() / 1000);
     return decoded.exp < now;
-  } catch (_) {
+  } catch {
     return true;
   }
 }
@@ -21,7 +21,7 @@ export function getUserId(token: string): string | null {
     const [, payload] = token.split("."); 
     const decoded = JSON.parse(atob(payload));
     return decoded.uid;
-  } catch (_) {
+  } catch {
     return null;
   }
 }
